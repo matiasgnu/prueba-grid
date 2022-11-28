@@ -1,0 +1,43 @@
+<div class="app">
+  <header>
+    <div class="logo-innova">
+      <button (click)="onAlternarMenu()">
+        Menu
+      </button>
+
+      <h2>HIS INNOVA</h2>
+    </div>
+
+    <nav aria-label="acciones-rapidas">
+      <a>Menu 1</a>
+      <a>Menu 2</a>
+      <a>Menu 3</a>
+    </nav>
+  </header>
+
+  <aside class="sidenav" [ngClass]="menuColapsado ? 'sidenav--collapse' : 'sidenav--open'" aria-label="menu lateral">
+    <div class="logo-cliente" [ngClass]="menuColapsado ? 'logo-cliente--collapse' : 'logo-cliente--open'">
+      <h1>Hospital Privado</h1>
+    </div>
+    
+    <nav class="menu" aria-label="menu-lateral">
+      <ng-container *ngFor="let menu of [1,2,3,4,5,6,7,8,9]">
+        <a class="menu__item">Menu {{ menu }}</a>
+      </ng-container>
+    </nav>
+  </aside>
+
+  <main role="main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+    <span> 2022 - TIPS </span>
+  </footer>
+</div>
+
+<ng-container *ngIf="mostrarModalDerecho">
+  <aside class="modal-derecho" aria-label="modal derecho">
+    <h1>Modal derecho</h1>
+  </aside>
+</ng-container>

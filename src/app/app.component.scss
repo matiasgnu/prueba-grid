@@ -1,0 +1,116 @@
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 2rem;
+  grid-template-columns: auto auto;
+  overflow: hidden;
+}
+
+.logo-cliente {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 4.5rem;
+
+  transition: width 350ms ease;
+
+  h1 {
+    text-align: center;
+    margin: 0;
+  }
+
+  &--open {
+    width: 13.5rem;
+  }
+
+  &--collapse {
+    width: 7.5rem;
+  }
+}
+
+header {
+  grid-column: 2 / 3;
+  min-height: 4.5rem;
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: white;
+  box-shadow: 0 2px 5px #e4e4e4;
+
+  .logo-innova {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+  }
+}
+
+.sidenav {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+  background-color: #cecece;
+
+  transition: width 350ms ease;
+
+  &--open {
+    width: 13.5rem;
+  }
+
+  &--collapse {
+    width: 7.5rem;
+  }
+}
+
+main {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  padding: 0.5rem;
+  overflow: auto;
+}
+
+footer {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  border-top: solid #212121 1px;
+  text-align: right;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  a {
+    padding-left: 0.3rem;
+  }
+}
+
+.modal-derecho {
+  width: 30.5rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #cecece;
+}
